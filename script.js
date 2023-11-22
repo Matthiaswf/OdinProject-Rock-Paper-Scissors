@@ -95,4 +95,4 @@ function play() {
     determineWinner();
 }
 
-console.log(play())
+play();
