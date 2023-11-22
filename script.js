@@ -38,27 +38,27 @@ function determineWinner(){
 
     if ( computer === 'Rock' && player === 'Scissors'){
         resultMessage = lossMessage;
-        console.log(resultMessage);
+        console.log(resultMessage + " " + computer + " beats " + player + '!');
     }
     else if ( computer === 'Paper' && player === 'Rock'){
         resultMessage = lossMessage;
-        console.log(resultMessage);
+        console.log(resultMessage + " " + computer + " beats " + player + '!');
     }
     else if ( computer === 'Scissors' && player === 'Paper'){
         resultMessage = lossMessage;
-        console.log(resultMessage);
+        console.log(resultMessage + " " + computer + " beats " + player + '!');
     }
     else if ( computer === 'Scissors' && player === 'Rock'){
         resultMessage = winMessage;
-        console.log(resultMessage);
+        console.log(resultMessage + " " + player + " beats " + computer + '!');
     }
     else if ( computer === 'Rock' && player === 'Paper'){
         resultMessage = winMessage;
-        console.log(resultMessage);
+        console.log(resultMessage + " " + player + " beats " + computer + '!');
     }
     else if ( computer === 'Paper' && player === 'Scissors'){
         resultMessage = winMessage;
-        console.log(resultMessage);
+        console.log(resultMessage + " " + player + " beats " + computer + '!');
     }
     else if ( computer === 'Scissors' && player === 'Scissors'){
         resultMessage = drawMessage;
