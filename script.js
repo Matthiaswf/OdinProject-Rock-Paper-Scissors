@@ -5,6 +5,10 @@ const choices = ["Rock", "Paper", "Scissors"];
 
 let player = prompt('Choose "Rock,Paper or Scissors?"')
 
+// Function to conver player string to correct typecase
+
+player = player.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
+
 // Function for the "Game" choosing one of the three randomly
 
 let computer = undefined;
