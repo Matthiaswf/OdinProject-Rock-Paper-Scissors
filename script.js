@@ -4,7 +4,7 @@ const choices = ["Rock", "Paper", "Scissors"];
 //Creating the "Game" choosing one of the three randomly
 
 function getComputerChoice(){
-    const computerChoice = Math.floor(Math.random() * choices.length);
+    let computerChoice = Math.floor(Math.random() * choices.length);
     return(computerChoice, choices[computerChoice]);
 }
 
