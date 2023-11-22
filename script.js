@@ -12,7 +12,7 @@ function getComputerChoice(){
     return computer;
 }
 
-console.log(getComputerChoice())
+console.log("The computer chose " + getComputerChoice() + "!")
 
 // The function for the players choice
 
@@ -25,7 +25,7 @@ function getPlayerChoice(){
     return player;
 }
 
-console.log(getPlayerChoice())
+console.log("You chose " + getPlayerChoice() + "!")
 
 // The function top determine the outcome and log the apropiate message
 
