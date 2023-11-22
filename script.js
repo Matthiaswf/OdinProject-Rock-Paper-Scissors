@@ -1,21 +1,20 @@
-// An Array for the options Player and PC Choose from
+// Turning the whole game process into one function
+
 const choices = ["Rock", "Paper", "Scissors"];
-
-// Function for the player choosing
-
-let player = prompt('Choose "Rock,Paper or Scissors?"')
-
-// Function to conver player string to correct typecase
-
-player = player.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
-
-// Console Logging the players choice after correction
-
-console.log("You chose " + player + "!")
-
-// Function for the "Game" choosing one of the three randomly
-
+let player = undefined;
 let computer = undefined;
+const winMessage = "You Win!";
+const lossMessage = "You Lose!";
+const drawMessage = "It's a Draw!";
+let resultMessage;
+let playerScore = 0;
+let computerScore = 0;
+
+function playerSelect() {
+    player = prompt('Choose "Rock,Paper or Scissors?"');
+    player = player.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
+    return player;
+}
 
 function getComputerChoice(){
     let computerChoice = Math.floor(Math.random() * choices.length);
@@ -23,32 +22,6 @@ function getComputerChoice(){
     computer = computerChoice;
     return computer;
 }
-
-console.log("The computer chose " + getComputerChoice() + "!")
-
-// Function for random Player choice
-
-/*let player =  undefined;
-
-function getPlayerChoice(){
-    let playerChoice = Math.floor(Math.random() * choices.length);
-    playerChoice = (playerChoice, choices[playerChoice]);
-    player = playerChoice;
-    return player;
-}
-
-console.log("You chose " + getPlayerChoice() + "!")
-*/
-
-// The function top determine the outcome and log the apropiate message. It also increments the scores.
-
-const winMessage = "You Win!";
-const lossMessage = "You Lose!";
-const drawMessage = "It's a Draw!";
-let resultMessage;
-
-let playerScore = 0;
-let computerScore = 0;
 
 function determineWinner(){
 
@@ -112,5 +85,14 @@ function determineWinner(){
         console.log("Computer: " + computerScore);
         console.log("Player: " + playerScore);
     }
-}    
-determineWinner();
+}
+
+function play() {
+    playerSelect();
+    console.log("You chose " + player + "!");
+    getComputerChoice();
+    console.log("The computer chose " + getComputerChoice() + "!");
+    determineWinner();
+}
+
+console.log(play())
