@@ -3,7 +3,7 @@ const choices = ["Rock", "Paper", "Scissors"];
 
 // Function for the player choosing
 
-let player = prompt("Rock,Paper or Scissors?")
+let player = prompt('Choose "Rock,Paper or Scissors?"')
 
 // Function for the "Game" choosing one of the three randomly
 
