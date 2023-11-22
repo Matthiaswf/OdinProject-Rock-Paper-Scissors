@@ -9,6 +9,10 @@ let player = prompt('Choose "Rock,Paper or Scissors?"')
 
 player = player.toLowerCase().replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
 
+// Console Logging the players choice after correction
+
+console.log("You chose " + player + "!")
+
 // Function for the "Game" choosing one of the three randomly
 
 let computer = undefined;
