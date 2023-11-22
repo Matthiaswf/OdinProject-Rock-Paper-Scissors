@@ -1,6 +1,10 @@
 // An Array for the options Player and PC Choose from
 const choices = ["Rock", "Paper", "Scissors"];
 
+// Function for the player choosing
+
+let player = prompt("Rock,Paper or Scissors?")
+
 // Function for the "Game" choosing one of the three randomly
 
 let computer = undefined;
@@ -14,9 +18,9 @@ function getComputerChoice(){
 
 console.log("The computer chose " + getComputerChoice() + "!")
 
-// The function for the players choice
+// Function for random Player choice
 
-let player =  undefined;
+/*let player =  undefined;
 
 function getPlayerChoice(){
     let playerChoice = Math.floor(Math.random() * choices.length);
@@ -26,6 +30,7 @@ function getPlayerChoice(){
 }
 
 console.log("You chose " + getPlayerChoice() + "!")
+*/
 
 // The function top determine the outcome and log the apropiate message
 
