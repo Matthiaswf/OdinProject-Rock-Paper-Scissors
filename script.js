@@ -1,16 +1,13 @@
-const choices = ['Rock', 'Paper', 'Scissors'];
-
 let computerChoice = undefined;
 let playerChoice = undefined;
 let roundCount = 0;
 let playerWinsCount = 0;
 let computerWinsCount = 0;
-
 let result = document.getElementById("result");
 let round  = document.getElementById("round");
 let playerWins  = document.getElementById("playerWins");
 let computerWins  = document.getElementById("computerWins");
-
+const choices = ['Rock', 'Paper', 'Scissors'];
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
@@ -45,9 +42,9 @@ function determineWinner() {
     getComputerChoice();
     console.log(computerChoice);
     if( playerChoice === computerChoice) {
-        result.textContent = 'The computer chose ' + computerChoice + "! It's a Draw!";
+        result.textContent = `The computer chose ${computerChoice}! It's a Draw!`;
         roundCount++;
-        round.textContent = 'Rounds:' + roundCount;
+        round.textContent = `Rounds: ${roundCount}`;
     }
 
     else if ( 
@@ -55,11 +52,11 @@ function determineWinner() {
     ||    playerChoice === 'Paper' && computerChoice === 'Rock'  
     ||    playerChoice === 'Scissors' && computerChoice === 'Paper') {
 
-        result.textContent = 'The computer chose ' + computerChoice + "! You Win!";
+        result.textContent = `The computer chose ${computerChoice}! You Win!`;
         roundCount++;
-        round.textContent = 'Rounds:' + roundCount;
+        round.textContent = `Rounds: ${roundCount}`;
         playerWinsCount++;
-        playerWins.textContent = 'Player Wins:' + playerWinsCount;
+        playerWins.textContent = `Player Wins: ${playerWinsCount}`;
         }
 
     else if ( 
@@ -67,10 +64,10 @@ function determineWinner() {
       ||    computerChoice === 'Paper' && playerChoice === 'Rock'  
       ||    computerChoice === 'Scissors' && playerChoice === 'Paper') {
   
-          result.textContent = 'The computer chose ' + computerChoice + "! You Lose!";
+          result.textContent = `The computer chose ${computerChoice}! You Lose!`;
           roundCount++;
-          round.textContent = 'Rounds:' + roundCount;
+          round.textContent = `Rounds: ${roundCount}`;
           computerWinsCount++;
-          computerWins.textContent = 'Computer Wins:' + computerWinsCount;
+          computerWins.textContent = `Computer Wins: ${computerWinsCount}`;
           }
 }
