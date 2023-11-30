@@ -1,6 +1,4 @@
-// Turning the whole game process into one function
-
- const choices = ["Rock", "Paper", "Scissors"];
+const choices = ["Rock", "Paper", "Scissors"];
 let player = undefined;
 let computer = undefined;
 const winMessage = "You Win!";
@@ -87,7 +85,7 @@ function determineWinner(){
         console.log("Computer: " + computerScore);
         console.log("Player: " + playerScore);
     }
-    
+
     else if ( computer === 'Paper' && player === 'Paper'){
         resultMessage = drawMessage;
         console.log(resultMessage);
