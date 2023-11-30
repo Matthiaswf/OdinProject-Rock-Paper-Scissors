@@ -16,11 +16,13 @@ rock.addEventListener('click', () => {
     playerChoice = 'Rock';
     determineWinner();
 });
+
 paper.addEventListener('click', () => {
     console.log('paperBtnClicked');
     playerChoice = 'Paper';
     determineWinner();
 });
+
 scissors.addEventListener('click', () => {
     console.log('scissorsBtnClicked');
     playerChoice = 'Scissors';
@@ -31,7 +33,7 @@ function getComputerChoice(){
     let randomChoice = Math.floor(Math.random() * choices.length);
     randomChoice = (randomChoice, choices[randomChoice]);
     computerChoice = randomChoice;
-    
+
     return computerChoice;
 }
 
