@@ -3,9 +3,13 @@ const choices = ['Rock', 'Paper', 'Scissors'];
 let computerChoice = undefined;
 let playerChoice = undefined;
 let roundCount = 0;
+let playerWinsCount = 0;
+let computerWinsCount = 0;
 
 let result = document.getElementById("result");
 let round  = document.getElementById("round");
+let playerWins  = document.getElementById("playerWins");
+let computerWins  = document.getElementById("computerWins");
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
@@ -54,6 +58,8 @@ function determineWinner() {
         result.textContent = 'The computer chose ' + computerChoice + "! You Win!";
         roundCount++;
         round.textContent = 'Rounds:' + roundCount;
+        playerWinsCount++;
+        playerWins.textContent = 'Player Wins:' + playerWinsCount;
         }
 
     else if ( 
@@ -64,5 +70,7 @@ function determineWinner() {
           result.textContent = 'The computer chose ' + computerChoice + "! You Lose!";
           roundCount++;
           round.textContent = 'Rounds:' + roundCount;
+          computerWinsCount++;
+          computerWins.textContent = 'Computer Wins:' + computerWinsCount;
           }
 }
