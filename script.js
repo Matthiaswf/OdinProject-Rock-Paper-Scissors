@@ -28,13 +28,39 @@ scissors.addEventListener('click', () => {
 });
 
 function getComputerChoice(){
-    const computerChoice = Math.floor(Math.random() * choices.length);
-
-    return(computerChoice, choices[computerChoice]);
+    let randomChoice = Math.floor(Math.random() * choices.length);
+    randomChoice = (randomChoice, choices[randomChoice]);
+    computerChoice = randomChoice;
+    
+    return computerChoice;
 }
 
 function determineWinner() {
-result.textContent = 'You Win!';
-roundCount++;
-round.textContent = 'Rounds:' + roundCount;
+    getComputerChoice();
+    console.log(computerChoice);
+    if( playerChoice === computerChoice) {
+        result.textContent = 'The computer chose ' + computerChoice + "! It's a Draw!";
+        roundCount++;
+        round.textContent = 'Rounds:' + roundCount;
+    }
+
+    else if ( 
+          playerChoice === 'Rock' && computerChoice === 'Scissors'
+    ||    playerChoice === 'Paper' && computerChoice === 'Rock'  
+    ||    playerChoice === 'Scissors' && computerChoice === 'Paper') {
+
+        result.textContent = 'The computer chose ' + computerChoice + "! You Win!";
+        roundCount++;
+        round.textContent = 'Rounds:' + roundCount;
+        }
+
+    else if ( 
+            computerChoice === 'Rock' && playerChoice === 'Scissors'
+      ||    computerChoice === 'Paper' && playerChoice === 'Rock'  
+      ||    computerChoice === 'Scissors' && playerChoice === 'Paper') {
+  
+          result.textContent = 'The computer chose ' + computerChoice + "! You Lose!";
+          roundCount++;
+          round.textContent = 'Rounds:' + roundCount;
+          }
 }
