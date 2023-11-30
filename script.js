@@ -1,16 +1,15 @@
 const choices = ['Rock', 'Paper', 'Scissors'];
+
 let computerChoice = undefined;
 let playerChoice = undefined;
+let roundCount = 0;
 
 let result = document.getElementById("result");
+let round  = document.getElementById("round");
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
-
-
-
-
 
 rock.addEventListener('click', () => {
     console.log('rockBtnClicked');
@@ -28,9 +27,6 @@ scissors.addEventListener('click', () => {
     determineWinner();
 });
 
-
-
-
 function getComputerChoice(){
     const computerChoice = Math.floor(Math.random() * choices.length);
 
@@ -38,6 +34,7 @@ function getComputerChoice(){
 }
 
 function determineWinner() {
-
 result.textContent = 'You Win!';
+roundCount++;
+round.textContent = 'Rounds:' + roundCount;
 }
